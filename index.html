@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Page | Anton</title>
+  <!-- detect the width of the device you are using -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- awesomefont -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css">
+  <!-- googlefont -->
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;700&family=Roboto:wght@500;900&display=swap" rel="stylesheet">
+  <!-- custom css -->
+  <link rel="stylesheet" href="style.css">
+  <!-- custom js -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="style.js">
+</head>
+<body>
+  <div class="container">
+    <div class="card-white" id="introduction">
+      <h1><span class="tag-name">Anton</span><span class="tag-surname">Voronin</span></h1>
+      <img src="images/profile.png" alt="avatar" class="img-size img-filter img-circle">
+      <p>I love coding, web-development and hockey 🏒</p>
+
+      <a href="https://www.institutvoronina.com/" class="btn btn-style" target="_blank">Discover my project</a>
+    </div>
+
+    <div class="card-white module">
+      <h2>Frontend Development 💻</h2>
+      <p>I am passionate about <strong>Frontend Development.</strong></p>
+    </div>
+
+    <div class="card-white module">
+      <h2>Hockey 🏒</h2>
+      <p>I am passionate about <strong>Hockey.</strong></p>
+    </div>
+
+    <div class="card-white module">
+      <h2>Follow me</h2>
+      <ul class="list-inline links">
+        <li><a href="https://github.com/Anton-Vor" target="_blank"><i class="fab fa-github-alt"></i></i></a></li>
+        <li><a href="https://www.instagram.com/ant_vrnin" target="_blank"><i class="fab fa-instagram"></i></i></a></li>
+      </ul>
+    </div>
+  </div>
+  <script>
+  (function($) {
+
+  $.fn.visible = function(partial) {
+
+      var $t            = $(this),
+          $w            = $(window),
+          viewTop       = $w.scrollTop(),
+          viewBottom    = viewTop + $w.height(),
+          _top          = $t.offset().top,
+          _bottom       = _top + $t.height(),
+          compareTop    = partial === true ? _bottom : _top,
+          compareBottom = partial === true ? _top : _bottom;
+
+    return ((compareBottom <= viewBottom) && (compareTop >= viewTop));
+
+  };
+
+})(jQuery);
+
+var win = $(window);
+
+var allMods = $(".module");
+
+allMods.each(function(i, el) {
+  var el = $(el);
+  if (el.visible(true)) {
+    el.addClass("already-visible");
+  }
+});
+
+win.scroll(function(event) {
+
+  allMods.each(function(i, el) {
+    var el = $(el);
+    if (el.visible(true)) {
+      el.addClass("come-in");
+    }
+  });
+
+});
+</script>
+</body>
+</html>

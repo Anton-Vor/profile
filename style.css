@@ -1,0 +1,169 @@
+body {
+  color: #252a34;
+  font-family: 'Lato', serif;
+  font-size: 16px;
+  background: #eaeaea;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+h1, h2, a {
+  font-family: 'Lato', serif;
+}
+
+h1 {
+  color: #ff5e6c;
+  font-size: 18px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+}
+
+h2 {
+  color: #ff5e6c;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+p {
+  color: #1f4068;
+}
+
+a {
+  text-decoration: none;
+}
+
+.tag-surname {
+  background: #1f4068;
+  color: white;
+}
+
+.tag-name {
+  background: #ff5e6c;
+  color: white;
+}
+
+.container {
+  width: 700px;
+  margin: 0px auto;
+}
+
+.card-white {
+  background: white;
+  text-align: center;
+  padding: 40px;
+  margin: 20px 0px;
+  border-radius: 4px;
+  box-shadow: 3px 3px 5px #02020233;
+}
+
+.img-size {
+  width: 220px;
+}
+
+.img-circle {
+  border-radius: 50%;
+}
+
+.img-filter {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+
+.img-filter:hover {
+  -webkit-filter: grayscale(0%);
+  filter: grayscale(0%);
+}
+
+@media (max-width: 720px) {
+  /* For a screen < 720px */
+  .container {
+    width: 500px;
+  }
+}
+
+@media (max-width: 540px) {
+  /* For a screen < 540px */
+  .img-size {
+  width: 150px;
+  }
+  .container {
+    width: 350px;
+  }
+}
+
+.btn {
+  padding: 10px 15px;
+  border-radius: 4px;
+}
+
+.btn-style {
+  color: #1f4068;
+  border:  2px solid #1f4068;
+  text-transform: uppercase;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.btn-style:hover {
+  background: #ff5e6c;
+  color: white;
+  border-style: none;
+}
+
+#introduction p {
+  margin-bottom: 40px;
+}
+
+.list-inline {
+  list-style: none;
+  padding: 0px;
+}
+
+.list-inline > li {
+  display: inline-block;
+}
+
+.links li {
+  margin: 10px;
+}
+
+.links i {
+  font-size: 40px;
+  color: rgb(200, 200, 200);
+}
+
+.links i:hover {
+  color: #1f4068;
+}
+
+/*custom design for cards*/
+
+
+.module {
+  min-height: 100px;
+  position: relative;
+}
+.module:nth-child(even) {
+  margin-right: 0;
+}
+
+.come-in {
+  transform: translateY(150px);
+  animation: come-in 0.8s ease forwards;
+}
+
+.come-in:nth-child(odd) {
+  animation-duration: 0.6s;
+}
+
+.already-visible {
+  transform: translateY(0);
+  animation: none;
+}
+
+@keyframes come-in {
+  to {
+    transform: translateY(0);
+  }
+}
